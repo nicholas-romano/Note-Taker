@@ -116,7 +116,6 @@ const renderNoteList = notes => {
 
   for (let i = 0; i < notes.length; i++) {
     const note = notes[i];
-    console.log("note: ", note);
 
     const $li = $(`<li id='${note.id}' class='list-group-item'>`).data(note).text(note.title);
     const $delBtn = $(
