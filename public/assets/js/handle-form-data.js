@@ -1,14 +1,14 @@
-var $noteTitle = $(".note-title");
-var $noteText = $(".note-textarea");
-var $saveNoteBtn = $(".save-note");
-var $newNoteBtn = $(".new-note");
-var $noteList = $(".list-container .list-group");
+const $noteTitle = $(".note-title");
+const $noteText = $(".note-textarea");
+const $saveNoteBtn = $(".save-note");
+const $newNoteBtn = $(".new-note");
+const $noteList = $(".list-container .list-group");
 
 // activeNote is used to keep track of the note in the textarea
-var activeNote = {};
+let activeNote = {};
 
 // A function for getting all notes from the db
-var getNotes = () => {
+const getNotes = () => {
   return $.ajax({
     url: "/api/notes",
     method: "GET"
@@ -16,7 +16,7 @@ var getNotes = () => {
 };
 
 // A function for saving a note to the db
-var saveNote = note => {
+const saveNote = note => {
   return $.ajax({
     url: "/api/notes",
     data: note,
@@ -25,15 +25,15 @@ var saveNote = note => {
 };
 
 // A function for deleting a note from the db
-var deleteNote = id => {
+const deleteNote = id => {
   return $.ajax({
-    url: "api/notes/" + id,
+    url: `api/notes/${id}`,
     method: "DELETE"
   });
 };
 
 // If there is an activeNote, display it, otherwise render empty inputs
-var renderActiveNote = () => {
+const renderActiveNote = () => {
   $saveNoteBtn.hide();
 
   if (activeNote.id) {
@@ -50,8 +50,8 @@ var renderActiveNote = () => {
 };
 
 // Get the note data from the inputs, save it to the db and update the view
-var handleNoteSave = () => {
-  var newNote = {
+const handleNoteSave = () => {
+  const newNote = {
     title: $noteTitle.val(),
     text: $noteText.val()
   };
@@ -63,11 +63,11 @@ var handleNoteSave = () => {
 };
 
 // Delete the clicked note
-var handleNoteDelete = event => {
+const handleNoteDelete = event => {
   // prevents the click listener for the list from being called when the button inside of it is clicked
   event.stopPropagation();
 
-  var note = $(this)
+  const note = $(this)
     .parent(".list-group-item")
     .data();
 
@@ -82,7 +82,7 @@ var handleNoteDelete = event => {
 };
 
 // Sets the activeNote and displays it
-var handleNoteView = () => {
+const handleNoteView = () => {
   activeNote = $(this).data();
   renderActiveNote();
 };
@@ -112,7 +112,7 @@ const renderNoteList = notes => {
   for (let i = 0; i < notes.length; i++) {
     const note = notes[i];
 
-    const $li = $("<li id='" + note.id + "' class='list-group-item'>").data(note);
+    const $li = $(`<li id='${note.id}' class='list-group-item'>`).data(note);
     const $span = $("<span>").text(note.title);
     const $delBtn = $(
       "<i class='fas fa-trash-alt float-right text-danger delete-note'>"
