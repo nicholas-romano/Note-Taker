@@ -1,76 +1,41 @@
-# Unit 11 Express Homework: Note Taker
+# Note Taker &middot; ![node](https://img.shields.io/badge/node-12.16.2-blue) ![npm](https://img.shields.io/badge/npm-7.1.0-blue) ![express](https://img.shields.io/badge/express-4.17.1-blue) ![nodemon](https://img.shields.io/badge/nodemon-2.0.3-blue) 
 
-## Description
+![Note Taker](/images/Note-Taker-Example.png) 
 
-Create an application that can be used to write, save, and delete notes. This application will use an express backend and save and retrieve note data from a JSON file.
+## Description 
+This application is used to write and save notes to help users remember important information.  
 
-* The application frontend has already been created, it's your job to build the backend and connect the two.
+## Table of Contents 
+* [Installation](#installation) 
+* [Usage](#usage) 
+* [License](#license) 
+* [Tests](#tests) 
+* [Questions](#questions) 
+ 
+## Installation 
+1.  Install node using the following command in your project folder: node install.  
+2.  Intall npm and express in the same folder using the command npm i express  
+3.  Install nodemon to monitor your script globally by entering: npm install -g nodemon in your terminal.  
+4.  To start the application, type: nodemon server.js in project root folder.  
+ 
+## Usage 
+1.  From the Note Taker home page, click the Get Started button to begin. ![Note-Taker-Home](/images/Note-Taker-Home.png) 
+2.  When the user has important information that needs to be referred back to, the user can enter a title for the note, and a description in the corresponding sections labeled Note Title and Note Text. ![Note-Taker-Title-Empty](/images/Note-Taker-Title-Empty.png) 
+3.  When the note is complete, the user must click the floppy disk icon to save it. ![Note-Taker-Save](/images/Note-Taker-Save.png)That note is then stored in the list on the left by title. ![Note-Taker-Note-Saved](/images/Note-Taker-Note-Saved.png) 
+4.  That note can then be accessed again by clicking on it. ![Note-Taker-Select-Note](/images/Note-Taker-Select-Note.png) 
+5.  A new note can be made when the user clicks the pencil icon on the top-right of the screen. ![Note-Taker-Enter-New-Note](/images/Note-Taker-Enter-New-Note.png) 
+6.  If the user decides they no longer want any particular note previously saved, they can click the red trash bin icon next to its title list item on the right to delete it from the list. ![Note-Taker-Delete-Note](/images/Note-Taker-Delete-Note.png) 
+ 
+## License 
+There is not a license for this application. 
 
-* The following HTML routes should be created:
+## Tests 
+1.  Test the pencil icon button by clicking on it, and make sure the text areas are editable by clicking inside the title and text areas and try typing.  
+2.  Check that the save button appears (floppy disk image on the right) after text has been entered in both the title and description fields.  
+3.  Check that when clicking the floppy disk image, the note is in fact saved on the left side of the page.  
+4.  Check to see if a saved note displays when it is clicked on from the list on the left.  
+ 
+## Questions 
+![GitHub Profile Image](https://avatars.githubusercontent.com/u/6642173?) 
 
-  * GET `/notes` - Should return the `notes.html` file.
-
-  * GET `*` - Should return the `index.html` file
-
-* The application should have a `db.json` file on the backend that will be used to store and retrieve notes using the `fs` module.
-
-* The following API routes should be created:
-
-  * GET `/api/notes` - Should read the `db.json` file and return all saved notes as JSON.
-
-  * POST `/api/notes` - Should receive a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client.
-
-  * DELETE `/api/notes/:id` - Should receive a query parameter containing the id of a note to delete. This means you'll need to find a way to give each note a unique `id` when it's saved. In order to delete a note, you'll need to read all notes from the `db.json` file, remove the note with the given `id` property, and then rewrite the notes to the `db.json` file.
-
-## User Story
-
-AS A user, I want to be able to write and save notes
-
-I WANT to be able to delete notes I've written before
-
-SO THAT I can organize my thoughts and keep track of tasks I need to complete
-
-## Business Context
-
-For users that need to keep track of a lot of information, it's easy to forget or be unable to recall something important. Being able to take persistent notes allows users to have written information available when needed.
-
-## Acceptance Criteria
-
-Application should allow users to create and save notes.
-
-Application should allow users to view previously saved notes.
-
-Application should allow users to delete previously saved notes.
-
-
-
-## Commit Early and Often
-
-One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for two reasons:
-
-* Your commit history is a signal to employers that you are actively working on projects and learning new skills.
-
-* Your commit history allows you to revert your codebase in the event that you need to return to a previous state.
-
-Follow these guidelines for committing:
-
-* Make single-purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits.
-
-* Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history.
-
-* Don't commit half-done work, for the sake of your collaborators (and your future self!).
-
-* Test your application before you commit to ensure functionality at every step in the development process.
-
-We would like you to have well over 200 commits by graduation, so commit early and often!
-
-## Submission on BCS
-
-You are required to submit the following:
-
-* The URL of the deployed application
-
-* The URL of the GitHub repository
-
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+ njr7romano@yahoo.com
