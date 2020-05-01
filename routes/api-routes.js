@@ -42,5 +42,14 @@ module.exports = (app) => {
 
   });
 
+  app.delete("/api/notes/:id", (req, res) => {
+    var chosen_note_id = parseInt(req.params.id);
+
+    let result = notes.filter(({id}) => id !== chosen_note_id);
+    notes = result;
+    res.json(result);
+
+  });
+
   
 };
