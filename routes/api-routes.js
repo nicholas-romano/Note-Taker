@@ -25,5 +25,22 @@ module.exports = (app) => {
 
   });
 
+  app.get("/api/notes/:id", (req, res) => {
+    //get id selected:
+    var chosen_note_id = parseInt(req.params.id);
+
+    for (let key in notes) {
+
+      let {id, title, text} = notes[key];
+
+      //find matching id in json and return object:
+      if (id === chosen_note_id) {
+        res.json({"id": id, "title": title, "text": text});
+      }
+
+    }
+
+  });
+
   
 };

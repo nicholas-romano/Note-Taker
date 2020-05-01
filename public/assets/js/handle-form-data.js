@@ -82,9 +82,15 @@ const handleNoteDelete = event => {
 };
 
 // Sets the activeNote and displays it
-const handleNoteView = () => {
-  activeNote = $(this).data();
-  renderActiveNote();
+const handleNoteView = event => {
+  const id = event.target.id;
+  $.ajax({
+    url: `/api/notes/${id}`,
+    success: function(data) {
+      activeNote = data;
+      renderActiveNote();
+    }
+  });
 };
 
 // Sets the activeNote to and empty object and allows the user to enter a new note
