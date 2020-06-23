@@ -7,7 +7,8 @@ This application is used to write and save notes to help users remember importan
 
 ## Table of Contents 
 * [Installation](#installation) 
-* [Usage](#usage) 
+* [Usage](#usage)
+* [Third Party Contributors](#third-party-contributors) 
 * [License](#license) 
 * [Tests](#tests) 
 * [Questions](#questions) 
@@ -26,6 +27,9 @@ This application is used to write and save notes to help users remember importan
 5.  A new note can be made when the user clicks the pencil icon on the top-right of the screen. ![Note-Taker-Enter-New-Note](/images/Note-Taker-Enter-New-Note.png) 
 6.  If the user decides they no longer want any particular note previously saved, they can click the red trash bin icon next to its title list item on the right to delete it from the list. ![Note-Taker-Delete-Note](/images/Note-Taker-Delete-Note.png) 
  
+## Third Party Contributors 
+Styling and layout was provided by the University of North Carolina Code Bootcamp. JSON file data connection code and page routing was created by Nick Romano. 
+
 ## License 
 There is not a license for this application. 
 
